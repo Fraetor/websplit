@@ -10,26 +10,43 @@
 </head>
 
 <body>
-    <template id="websplit-frame-template">
-        <iframe class="frame" src="">
-            iframe failed to load...
-        </iframe>
-    </template>
-
     <template id="empty-websplit">
         <div class="websplit-container">
             <header class="websplit-header">
                 <div>
                     <button class="split-button" title="Split vertically" onclick="vsplit(this)">
-                        <img src="vsplit.svg" alt="Split vertically">
+                        <svg width="10mm" height="10mm" version="1.1" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
+                            <title>Split vertically</title>
+                            <g transform="translate(0 .119902)" stroke="currentColor">
+                                <rect transform="scale(1,-1)" x="1.5" y="-8.65486" width="3.54953" height="7.54953" fill="none"/>
+                                <g transform="translate(.5 -.279823)">
+                                    <path d="m5.5 2.5h3"/>
+                                    <path d="m7 1v3"/>
+                                </g>
+                            </g>
+                        </svg>
                     </button>
                     <button class="split-button" title="Split horizontally" onclick="hsplit(this)">
-                        <img src="hsplit.svg" alt="Split horizontally">
+                        <svg width="10mm" height="10mm" version="1.1" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
+                            <title>Split horizontally</title>
+                            <g transform="rotate(90 4.94005 4.94005)" stroke="currentColor">
+                                <rect transform="scale(1,-1)" x="1.5" y="-8.65486" width="3.54953" height="7.54953" fill="none"/>
+                                <g transform="translate(.5 -.279823)">
+                                    <path d="m5.5 2.5h3"/>
+                                    <path d="m7 1v3"/>
+                                </g>
+                            </g>
+                        </svg>
                     </button>
                 </div>
-                <span>New Split</span>
                 <button class="close-button" title="Close split" onclick="close_split(this)">
-                    <img src="close.svg" alt="Close split">
+                    <svg width="10mm" height="10mm" version="1.1" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
+                        <title>Close split</title>
+                        <g stroke="currentColor">
+                            <path d="m7.82843 7.82843-5.65685-5.65685"/>
+                            <path d="m2.17157 7.82843 5.65685-5.65685"/>
+                        </g>
+                    </svg>
                 </button>
             </header>
             <div class="websplit-placeholder">
@@ -40,6 +57,12 @@
                 </div>
             </div>
         </div>
+    </template>
+
+    <template id="websplit-frame-template">
+        <iframe class="frame" src="">
+            iframe failed to load...
+        </iframe>
     </template>
 
     <noscript>
