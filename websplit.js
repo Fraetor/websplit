@@ -31,6 +31,8 @@ function vsplit(clickedElement) {
 
 function pop_out_split() {
     console.log("Popping out split into new tab")
+    console.error("Not yet implemented")
+    alert("Pop-out not yet implemented")
 }
 
 function close_split(clickedElement) {
@@ -41,23 +43,19 @@ function close_split(clickedElement) {
     // Prevent removing HTML above the main content.
     if (parent.tagName == "DIV") {
         parent.removeChild(element);
-        if (element.nextElementSibling) {
-            parent.replaceWith(element.nextElementSibling);
-        } else {
-            parent.replaceWith(element.previousElementSibling);
-        }
+        parent.replaceWith(...parent.childNodes)
     } else {
-        parent.removeChild(element)
-        parent.replaceChildren(parent.childNodes)
+        parent.replaceChildren(empty_websplit.cloneNode(true))
     }
 }
 
 function load_page(clickedElement) {
     const url = clickedElement.previousElementSibling.value
+    console.log(`Loading page in split: ${url}`)
     const frame = websplit_frame.cloneNode(true)
     frame.setAttribute("src", url)
     clickedElement.parentElement.parentElement.replaceWith(frame)
 }
 
 // Add initial websplit to page.
-document.querySelector("#websplits").replaceChildren(empty_websplit.cloneNode(true))
+document.querySelector("main").replaceChildren(empty_websplit.cloneNode(true))
