@@ -6,80 +6,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Websplit</title>
     <link rel="stylesheet" href="websplit.css">
-    <script src="websplit.js"></script>
+    <script defer src="websplit.js"></script>
 </head>
 
 <body>
-    <div class="vsplit">
+    <template id="websplit-frame-template">
+        <iframe class="frame" src="">
+            iframe failed to load...
+        </iframe>
+    </template>
+
+    <template id="empty-websplit">
         <div class="websplit-container">
             <header class="websplit-header">
                 <div>
-                    <button title="Split horizontally" onclick="hsplit()">
-                        <img src="hsplit.svg" alt="">
+                    <button class="split-button" title="Split vertically" onclick="vsplit(this)">
+                        <img src="vsplit.svg" alt="Split vertically">
                     </button>
-                    <button title="Split vertically" onclick="vsplit()">
-                        <img src="vsplit.svg" alt="">
-                    </button>
-                </div>
-                <span>Page title</span>
-                <div>
-                    <button title="Open in new tab" onclick="pop_out_split()">
-                        <img src="pop-out.svg" alt="">
-                    </button>
-                    <button title="Close split" onclick="close_split()">
-                        <img src="close.svg" alt="">
+                    <button class="split-button" title="Split horizontally" onclick="hsplit(this)">
+                        <img src="hsplit.svg" alt="Split horizontally">
                     </button>
                 </div>
+                <span>New Split</span>
+                <button class="close-button" title="Close split" onclick="close_split(this)">
+                    <img src="close.svg" alt="Close split">
+                </button>
             </header>
-            <iframe class="frame" src="https://www.frost.cx/blog">
-                iframe failed to load...
-            </iframe>
-        </div>
-
-        <div class="hsplit">
-            <div class="websplit-container">
-                <header class="websplit-header">
-                    <div>
-                        <button class="split-button" title="Split horizontally">
-                            <img src="hsplit.svg" alt="Split horizontally">
-                        </button>
-                        <button class="split-button" title="Split vertically">
-                            <img src="vsplit.svg" alt="Split vertically">
-                        </button>
-                    </div>
-                    <span>Page title</span>
-                    <button class="close-button" title="Close split"><img src="close.svg" alt="Close
-                        split"></button>
-                </header>
-                <iframe class="frame" src="https://www.frost.cx/blog">
-                    iframe failed to load...
-                </iframe>
-            </div>
-
-            <div class="websplit-container">
-                <header class="websplit-header">
-                    <div>
-                        <button class="split-button" title="Split horizontally">
-                            <img src="hsplit.svg" alt="Split horizontally">
-                        </button>
-                        <button class="split-button" title="Split vertically">
-                            <img src="vsplit.svg" alt="Split vertically">
-                        </button>
-                    </div>
-                    <span>New Split</span>
-                    <button class="close-button" title="Close split"><img src="close.svg" alt="Close
-                        split"></button>
-                </header>
-                <div class="websplit-placeholder">
-                    <div>Open a website:</div>
-                    <div>
-                        <input type="url" placeholder="https://...">
-                        <button title="Open URL in split" onclick="load_page()">🔎</button>
-                    </div>
+            <div class="websplit-placeholder">
+                <div>Open a website:</div>
+                <div>
+                    <input type="url" placeholder="https://...">
+                    <button title="Open URL in split" onclick="load_page(this)">🔎</button>
                 </div>
             </div>
         </div>
-    </div>
+    </template>
+
+    <main id="websplits">
+        Loading websplits...
+    </main>
 </body>
 
 </html>

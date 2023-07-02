@@ -104,3 +104,10 @@ not to see them */
     height: 100%;
     width: 100%;
 }
+
+main {
+    display: grid;
+    justify-content: stretch;
+    align-items: stretch;
+    height: 100vh;
+}
