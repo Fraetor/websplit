@@ -35,10 +35,21 @@ function pop_out_split() {
 
 function close_split(clickedElement) {
     console.log("Closing split")
-    const element = clickedElement.parentElement.parentElement.parentElement
-    const split = element.parentElement;
-    const parent = split.parentElement;
-    parent.replaceChild(element, split)
+    const element = clickedElement.parentElement.parentElement
+    const parent = element.parentElement;
+    console.log(element, parent)
+    // Prevent removing HTML above the main content.
+    if (parent.tagName == "DIV") {
+        parent.removeChild(element);
+        if (element.nextElementSibling) {
+            parent.replaceWith(element.nextElementSibling);
+        } else {
+            parent.replaceWith(element.previousElementSibling);
+        }
+    } else {
+        parent.removeChild(element)
+        parent.replaceChildren(parent.childNodes)
+    }
 }
 
 function load_page(clickedElement) {
