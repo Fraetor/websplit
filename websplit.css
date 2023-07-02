@@ -36,7 +36,6 @@ not to see them */
     grid-template-columns: 1fr 1fr;
     justify-content: stretch;
     align-items: stretch;
-    height: 100vh;
 }
 
 .hsplit {
@@ -45,11 +44,10 @@ not to see them */
     flex-direction: column;
     justify-content: stretch;
     align-items: stretch;
-    height: 100vh;
 }
 
 .websplit-container {
-    display: inline-flex;
+    display: flex;
     flex-direction: column;
     outline: solid 1px #1b1b1b;
 }
