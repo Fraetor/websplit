@@ -39,15 +39,32 @@
                         </svg>
                     </button>
                 </div>
-                <button class="close-button" title="Close split" onclick="close_split(this)">
-                    <svg width="10mm" height="10mm" version="1.1" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
-                        <title>Close split</title>
-                        <g stroke="currentColor">
-                            <path d="m7.82843 7.82843-5.65685-5.65685"/>
-                            <path d="m2.17157 7.82843 5.65685-5.65685"/>
-                        </g>
-                    </svg>
-                </button>
+                <div>
+                    <button title="Open in new tab" onclick="pop_out_split()">
+                        <svg width="10mm" height="10mm" version="1.1" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
+                            <title>Open in new tab</title>
+                            <defs>
+                                <marker id="CapTriangle" overflow="visible" markerHeight="1" markerWidth="0.52499998" orient="auto-start-reverse" preserveAspectRatio="xMidYMid" viewBox="0 0 0.525 1">
+                                    <path transform="scale(.5)" d="m0-1 1 1-1 1-0.05-1z" fill="context-stroke"/>
+                                </marker>
+                                <marker id="Arrow1" overflow="visible" markerHeight="6.7071066" markerWidth="4.0606604" orient="auto-start-reverse" preserveAspectRatio="xMidYMid" viewBox="0 0 4.0606602 6.7071068">
+                                    <path transform="rotate(180 .125 0)" d="m3-3-3 3 3 3" fill="none" stroke="context-stroke"/>
+                                </marker>
+                            </defs>
+                            <path d="m-5.94e-5 0.5h9.5v9.5" fill="none" stroke="currentColor"/>
+                            <path d="m0.3523 9.648 6.973-6.974" fill="none" marker-end="url(#Arrow1)" marker-start="url(#CapTriangle)" stroke="currentColor" stroke-width="1"/>
+                        </svg>
+                    </button>
+                    <button class="close-button" title="Close split" onclick="close_split(this)">
+                        <svg width="10mm" height="10mm" version="1.1" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
+                            <title>Close split</title>
+                            <g stroke="currentColor">
+                                <path d="m7.82843 7.82843-5.65685-5.65685"/>
+                                <path d="m2.17157 7.82843 5.65685-5.65685"/>
+                            </g>
+                        </svg>
+                    </button>
+                </div>
             </header>
             <div class="websplit-placeholder">
                 <div>Open a website:</div>
@@ -57,12 +74,6 @@
                 </div>
             </div>
         </div>
-    </template>
-
-    <template id="websplit-frame-template">
-        <iframe class="frame" src="">
-            iframe failed to load...
-        </iframe>
     </template>
 
     <noscript>

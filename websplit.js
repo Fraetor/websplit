@@ -1,5 +1,4 @@
 // Load templates
-const websplit_frame = document.querySelector("#websplit-frame-template").content.firstElementChild
 const empty_websplit = document.querySelector("#empty-websplit").content.firstElementChild
 
 
@@ -37,7 +36,7 @@ function pop_out_split() {
 
 function close_split(clickedElement) {
     console.log("Closing split")
-    const element = clickedElement.parentElement.parentElement
+    const element = clickedElement.parentElement.parentElement.parentElement
     const parent = element.parentElement;
     console.log(element, parent)
     // Prevent removing HTML above the main content.
@@ -52,7 +51,8 @@ function close_split(clickedElement) {
 function load_page(clickedElement) {
     const url = clickedElement.previousElementSibling.value
     console.log(`Loading page in split: ${url}`)
-    const frame = websplit_frame.cloneNode(true)
+    const frame = document.createElement("iframe")
+    frame.setAttribute("class", "frame")
     frame.setAttribute("src", url)
     clickedElement.parentElement.parentElement.replaceWith(frame)
 }
