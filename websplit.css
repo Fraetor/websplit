@@ -65,9 +65,13 @@ not to see them */
     font-family: sans-serif;
 }
 
+.websplit-header>span {
+    overflow: hidden;
+}
+
 .websplit-header button {
     background-color: transparent;
-    color: #535353;
+    color: white;
     border: none;
     border-radius: 0.25em;
     width: 2em;

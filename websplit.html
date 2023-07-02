@@ -14,16 +14,22 @@
         <div class="websplit-container">
             <header class="websplit-header">
                 <div>
-                    <button class="split-button" title="Split horizontally">
-                        <img src="hsplit.svg" alt="Split horizontally">
+                    <button title="Split horizontally" onclick="hsplit()">
+                        <img src="hsplit.svg" alt="">
                     </button>
-                    <button class="split-button" title="Split vertically">
-                        <img src="vsplit.svg" alt="Split vertically">
+                    <button title="Split vertically" onclick="vsplit()">
+                        <img src="vsplit.svg" alt="">
                     </button>
                 </div>
                 <span>Page title</span>
-                <button class="close-button" title="Close split"><img src="close.svg" alt="Close
-                    split"></button>
+                <div>
+                    <button title="Open in new tab" onclick="pop_out_split()">
+                        <img src="pop-out.svg" alt="">
+                    </button>
+                    <button title="Close split" onclick="close_split()">
+                        <img src="close.svg" alt="">
+                    </button>
+                </div>
             </header>
             <iframe class="frame" src="https://www.frost.cx/blog">
                 iframe failed to load...
@@ -68,7 +74,7 @@
                     <div>Open a website:</div>
                     <div>
                         <input type="url" placeholder="https://...">
-                        <button>🔎</button>
+                        <button title="Open URL in split" onclick="load_page()">🔎</button>
                     </div>
                 </div>
             </div>
